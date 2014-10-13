@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package hallowelt;
+
+/**
+ * @author platz
+ *
+ */
+public class KlasseC extends AbstrakteKlasseA {
+
+	/* (non-Javadoc)
+	 * @see hallowelt.AbstrakteKlasseA#ausgeben()
+	 */
+	@Override
+	void ausgeben() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

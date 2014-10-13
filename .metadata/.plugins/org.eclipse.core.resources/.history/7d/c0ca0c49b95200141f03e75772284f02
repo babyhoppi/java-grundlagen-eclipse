@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+
+/**
+ * @Author Marco Hoppe
+ */
+public class KlasseB extends KlasseA {
+
+	/**
+	 * 
+	 */
+	public KlasseB() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package sortieren;
+
+/**
+ * @Author Marco Hoppe
+ */
+public class ArrayClass {
+
+	/**
+	 * 
+	 */
+	public ArrayClass() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

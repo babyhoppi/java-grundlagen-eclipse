@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package sortieren;
+
+/**
+ * @Author Marco Hoppe
+ */
+public class ArrayClass {
+
+	/**
+	 * 
+	 */
+	public ArrayClass() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) { 	// Begin der Methode main
+		int z[] = { 3, 9, 5, 2, 3 }; 			// Zahlenreihe
+		System.out.println("z sieht vor dem sortieren so aus : " + zToString(z)); // Ausgabe der Zahlenreihe
+		zahlenSort(z); // Aufruf der Methode zum sortieren
+		System.out.println("z sieht nach dem sortieren so aus : "+ zToString(z)); // Ausgabe der Zahlenreihe
+	} // Ende der Methode main
+
+	public static String zToString(int[] z) { 	// Begin der Methode zum umwandeln von Zahlen in eine Zeichenkette und wird durch
+												// (int[]z) mit der Zahlenliste bekannt gemacht
+		String s = ""; 							// der Buchstabe s erhlt die Zuweisung, dass es eine Zeichenkette ist
+		for (int i = 0; i < z.length; i++) { 	// starten bei 0, weiter solange i kleiner als die Länge der Zahlenliste ist
+			s = s + z[i] + ","; 				// füge hinter jedes Element ein , hinzu
+		} 										// ENDE
+		s = s.substring(0, s.length() - 1); 	// Streiche den letzten Wert aus der Zeichenkette !!! substring geht schon davon aus den
+												// letzten Wert zu streichen also 10-1 plus -1!!!!!
+		s = s + "\n"; 							// füge der Zeichenkette eine neue Zeile an
+		return s; 								// Der Wert(ist nun eine Zeichenkette) wird als s zurückgegeben
+	}
+
+}

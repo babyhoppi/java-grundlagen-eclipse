@@ -1,0 +1,24 @@
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+/**
+ * 
+ */
+
+/**
+ * @Author Marco Hoppe
+ */
+public class KlasseB extends KlasseA {
+
+	/**
+	 * 
+	 */
+	public KlasseB() {
+		// TODO Auto-generated constructor stub
+		
+		public Void pinRaten() {
+			
+			System.out.println("Meine PIN lautet: " + this.getPinNummer());
+		}
+	}
+
+}

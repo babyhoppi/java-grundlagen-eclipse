@@ -1,0 +1,12 @@
+package hallowelt;
+
+public class MeineErsteKlasse {
+	
+	public static void main(String[] args) {
+		
+		public static void willkommen() {
+			System.out.println("willkommen von der Ersten Klasse");
+		}
+	}
+
+}
