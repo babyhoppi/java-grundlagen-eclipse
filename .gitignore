@@ -12,10 +12,13 @@
 hs_err_pid*
 
 
-#eclipsespezifische Dateien ausblenden
+#netbeans/eclipsespezifische Dateien ausblenden
 
 .metadata
 .project
 .settings/
 .classpath
 .recommenders
+nbproject/
+build/
+nbbuild/
