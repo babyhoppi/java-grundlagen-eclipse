@@ -12,7 +12,7 @@
 hs_err_pid*
 
 
-#netbeansspezifische Dateien ausblenden
+#eclipsespezifische Dateien ausblenden
 
 .metadata
 .project
