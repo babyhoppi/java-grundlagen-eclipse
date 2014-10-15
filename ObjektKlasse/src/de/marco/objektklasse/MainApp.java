@@ -109,14 +109,15 @@ public class MainApp {
 		//_________________________________________________________________
 		
 		long demoLang =-1000l;
+	      
 		
-		for( int i=0; i < 32; i++){
+		/*for( int i=0; i < 32; i++){
 			System.out.println(demoLang >> i);
 		}
 		
 		for( int i=0; i < 32; i++){
 			System.out.println(demoLang >>> i);
-		}
+		}*/
 		
 		System.out.println((int)(demoLang ^ (demoLang>>>32)));
 		

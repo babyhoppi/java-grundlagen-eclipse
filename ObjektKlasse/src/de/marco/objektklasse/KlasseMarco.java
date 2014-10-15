@@ -7,9 +7,11 @@ package de.marco.objektklasse;
  * @Author Marco Hoppe
  */
 public class KlasseMarco {
-	
 	private int meinWert;
-	
+	private int meinHashCodeWert;
+	private int attributA;
+	private long attributB;
+	private String attributC;
 	
 	//Standardkonstruktor
 	public KlasseMarco() {
@@ -56,7 +58,11 @@ public class KlasseMarco {
 	@Override
 	public int hashCode(){
 		// Startwert = 59 * unserer Zahl(1000) + 17(Einer wilkürlichen Zahl)
-		return 59 + (int)(this.meinWert)+17;
+		meinHashCodeWert = 59 + (int)(this.attributA)+17;
+		meinHashCodeWert = 59 + meinHashCodeWert + (int)(this.attributB ^ (this.attributB>>>32));
+		meinHashCodeWert = 59 + meinHashCodeWert + this.attributC.hashCode();
+		return meinHashCodeWert & 0x7FFFFFFF;
+		
 	}
 
 }
