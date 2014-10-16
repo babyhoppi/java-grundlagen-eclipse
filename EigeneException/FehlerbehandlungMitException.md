@@ -52,5 +52,26 @@
 		- throw ex;
 		- ex = "Das ist eine neue Fehlermeldung"
 
--
+##Fehlerbehandlung mit Exception##
+
+	ungeprüfte	+	geprüfte Exception
+		^						^
+		I						I
+	müssen nicht				(1) catch
+	mit catch 					(2)	deklarieren, dass die Methode eine Ex. wirft
+	gefangen werden		
+
+
+-eigene Exceptionklassen	werden von Exception abgeleitet
+
+	    class MeineException extends Exception {
+    		MeineException(String msg) {
+    			super(msg);
+    		}
+    	}
+
+##Warum eigene Exception-Klassen?##
+
+	Damit auf unterschiedliche Ausnahmen gezielt in CATCH-Blöcken reagiert werden kann
+	
 

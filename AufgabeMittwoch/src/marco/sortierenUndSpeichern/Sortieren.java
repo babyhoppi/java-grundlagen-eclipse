@@ -29,14 +29,14 @@ public class Sortieren {
 			int[] zahlenArray = new int[anzahlDerZahlen + 1];
 			
 			// Mit der FOR Schleife wird eine Zahlenfolge erstellt die etwas komisch ist. 0,0,0,0,0,x <<--- WARUM?
-			//for (int i=anzahlDerZahlen; i >= 0; i--) {
-			//	zahlenArray[anzahlDerZahlen] = (int) (Math.random() * 10);
-			//}
-			
-			while (anzahlDerZahlen >= 0) {
-				zahlenArray[anzahlDerZahlen] = (int) (Math.random() * 100);
-				anzahlDerZahlen--;
+			for (int i=0; i < zahlenArray.length; i++) {
+				zahlenArray[i] = (int) (Math.random() * 10);
 			}
+			
+			//while (anzahlDerZahlen >= 0) {
+			//	zahlenArray[anzahlDerZahlen] = (int) (Math.random() * 100);
+			//	anzahlDerZahlen--;
+			//}
 			
 			System.out.println(Arrays.toString(zahlenArray));
 			unsortedAusgabe = new PrintWriter(new FileWriter("unsorted.txt"));
