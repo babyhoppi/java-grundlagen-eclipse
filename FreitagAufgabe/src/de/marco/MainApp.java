@@ -1,12 +1,16 @@
-package de.marco;
+package src.de.marco;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.imageio.IIOException;
+
 public class MainApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ExceptionKlasse {
 		
 		/*
 		 * Angabe von KfZ-Daten
@@ -28,18 +32,38 @@ public class MainApp {
 		}	
 				
 		if(ausgabeFormat >0){
+			System.out.println("Wieviele Fahrten soll das Fahrzeug machen?");
+			Scanner eingabeFahrten = new Scanner(System.in);
+			try {
+				anzahlDerFahrten = eingabeFahrten.nextInt();
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("Sie haben keine Zahl eingegeben! Es wird eine Fahrt angenommen.");
+				anzahlDerFahrten = 1;
+			}
 			
 			while (anzahlDerFahrten > 0){
+				System.out.println("Welche Distance soll das Fahrzeug zurücklegen?");
 				Scanner eingabe = new Scanner(System.in);
-				gewuenschteDistance = eingabe.nextInt(); 
-				carListe.get(kfzEintrag).move(gewuenschteDistance,statusEngine);
-				AusgebenUndSpeichern.ausgebenAufScreen(ausgabeFormat, carListe, carListe.get(kfzEintrag));
-				anzahlDerFahrten--;
+				try{
+					gewuenschteDistance = eingabe.nextInt();
+					carListe.get(kfzEintrag).move(gewuenschteDistance,statusEngine);
+					AusgebenUndSpeichern.ausgebenAufScreen(ausgabeFormat, carListe, carListe.get(kfzEintrag));
+					anzahlDerFahrten--; 
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println("Sie haben keine Zahl eingegeben! Es wird eine Fahrt von 0 Kilometer angenommen.");
+					anzahlDerFahrten--;
+					if(anzahlDerFahrten==0){
+						System.out.println("Wieviele Fahrten soll das Fahrzeug machen?");
+					}
+				}
+				
 			}
 		}else{
 				carListe.get(kfzEintrag).move(gewuenschteDistance,statusEngine);
 				AusgebenUndSpeichern.ausgebenAufScreen(ausgabeFormat, carListe, carListe.get(kfzEintrag));
-			}
+			}System.out.println("Das Programm endet hier!!!!!");
 	}
 	
 	

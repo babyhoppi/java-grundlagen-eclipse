@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.marco;
+package src.de.marco;
 
 
 /**
