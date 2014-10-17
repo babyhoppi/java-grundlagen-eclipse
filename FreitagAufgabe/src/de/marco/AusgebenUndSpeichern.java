@@ -3,22 +3,41 @@ package de.marco;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AusgebenUndSpeichern {
-	List<Car> tmp;
-	// - 20 Autos in einer ArryList speichern
-	/*public static void erzeugen() {
-		List<Car> carListe = new ArrayList<>();
-		tmp = carListe;
-		for(int i = 0; i < 20; i++){
-			int kmStand = (int)(Math.random()*100);
-			carListe.add(new Car(kmStand));
-		}	
-	}*/
-	
-	// - alle Autos der Liste ausgeben a) Screen b) Datei
-	/*public void ausgebenAufScreen() {
-		for(Car element:tmp){
-			System.out.println(element.kmStand);
+public class AusgebenUndSpeichern {	
+
+	/**
+	 * @param ausgabeFormat
+	 * @param carListe
+	 * 
+	 * alle Autos der Liste ausgeben a) Screen b) Datei
+	 */
+	public static void ausgebenAufScreen(int ausgabeFormat, List<Car> carListe, Car car) {
+		// TODO Auto-generated method stub
+		try {
+			switch (ausgabeFormat) {
+				default:
+				case 0:
+					System.out.println("Es wurde keine Auswahl getroffen.");
+					break;
+				case 1:
+						System.out.println(car.getClass().getName());
+						System.out.println(car.kmStand);
+					break;
+				case 2:
+					break;
+				case 3:
+					System.out.println(car.getClass().getName());
+					
+					break;
+				case 4:
+					for(Car element:carListe){
+						System.out.println(element.kmStand);
+					}
+					break;
+			}	
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
-	}*/
+		
+	}
 }

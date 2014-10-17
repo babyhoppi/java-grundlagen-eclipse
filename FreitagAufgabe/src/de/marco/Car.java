@@ -47,10 +47,27 @@ public class Car implements Vehicle {
 	}
 
 	@Override
-	public void move(int distance) {
-		// TODO Auto-generated method stub
-		//this.distance = distance;
-		this.kmStand += distance;
+	public void move(boolean statusEngine) {
+		int Min = 0;
+		int Max = 100;
+		
+		if(statusEngine){
+		this.kmStand += Min + (int)(Math.random() * ((Max - Min) + 1));
+		}
 	}
 
+	
+	@Override
+	public void move(int distance) {
+		if(this.statusEngine){
+		this.kmStand += distance;
+		}
+	}
+	
+	@Override
+	public void move(int distance,boolean statusEngine) {
+		if(statusEngine){
+		this.kmStand += distance;
+		}
+	}
 }
