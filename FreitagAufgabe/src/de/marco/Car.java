@@ -1,4 +1,4 @@
-package src.de.marco;
+package de.marco;
 
 public class Car implements Vehicle {
 	

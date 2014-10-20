@@ -1,4 +1,4 @@
-package src.de.marco;
+package de.marco;
 
 public interface Vehicle {
 	public void startEngine();		 	// engineStarted = true			startet das Fahrzeug

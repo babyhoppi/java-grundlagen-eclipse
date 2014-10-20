@@ -11,8 +11,8 @@ public class Fahrstuhl {
      * @param args
      */
     public static void main(String[] args) {
-	Fahrstuhl10(0);
-	Fahrstuhl150(0);
+	Fahrstuhl10(4);
+	Fahrstuhl150(3);
 	
     }
 	

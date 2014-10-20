@@ -74,20 +74,11 @@ public class AutoBeispiel {
 		}
 
 		// wir testen das Treeset mit String
-		Comparator<Car> asc = new Comparator<Car>() {
-			@Override
-			public int compare(Car c1, Car c2) {
-				return Double.compare(c1.hashCode(), c2.hashCode());
-			}
-		};
-		Comparator<Car> desc = new Comparator<Car>() {
-			@Override
-			public int compare(Car c1, Car c2) {
-				return Double.compare(c2.hashCode(), c1.hashCode());
-			}
-		};
+		//Comparator<Car> asc = new Car. Comparator<Car>();
+		//Comparator<Car> desc = new Comparator<Car>();
+		
 
-		TreeSet<Car> treeCar = new TreeSet<>(desc);
+		TreeSet<Car> treeCar = new TreeSet<>();
 		treeCar.add(new Car(true, 1000));
 		treeCar.add(new Car(true, 500));
 		treeCar.add(new Car(true, 2000));

@@ -1,4 +1,4 @@
-package src.de.marco;
+package de.marco;
 
 import java.util.ArrayList;
 import java.util.List;
