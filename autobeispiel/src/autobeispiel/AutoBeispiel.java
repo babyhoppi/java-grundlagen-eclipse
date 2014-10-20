@@ -29,20 +29,20 @@ public class AutoBeispiel {
 		HashSet<Car> hashCar = new HashSet<>();
 		hashCar.add(new Car(true, 0));
 		hashCar.add(new Car(true, 0));
-		
+
 		hashCar.add(new Car(true, 1000));
 		hashCar.add(new Car(false, 1000));
-		System.out.println("Das HashSet enthält: " + hashCar.size() + " Elemente.");
-		
-		
-		//wir testen eine String-HashSet
+		System.out.println("Das HashSet enthält: " + hashCar.size()
+				+ " Elemente.");
+
+		// wir testen eine String-HashSet
 		HashSet<String> hashString = new HashSet<>();
-		
+
 		hashString.add("Hallo ");
 		hashString.add(" wunderschöne ");
 		hashString.add(" Java-Welt!");
-		
-		for(String s : hashString) {
+
+		for (String s : hashString) {
 			System.out.println(s + " HashCode: " + s.hashCode());
 		}
 
@@ -55,46 +55,45 @@ public class AutoBeispiel {
 		treeInt.add(750);
 		treeInt.add(875);
 		treeInt.add(225);
-		
+
 		for (Integer i : treeInt) {
 			System.out.println(i);
 		}
-		
+
 		// wir testen das Treeset mit String
-				TreeSet<String> treeString = new TreeSet<>();
-				treeString.add("Anton");
-				treeString.add("Berta");
-				treeString.add("Charlie");
-				treeString.add("Dora");
-				treeString.add("Willi");
-				treeString.add("Xantippe");
-				
-				for (String i : treeString) {
-					System.out.println(i);
-				}
-		
+		TreeSet<String> treeString = new TreeSet<>();
+		treeString.add("Anton");
+		treeString.add("Berta");
+		treeString.add("Charlie");
+		treeString.add("Dora");
+		treeString.add("Willi");
+		treeString.add("Xantippe");
+
+		for (String i : treeString) {
+			System.out.println(i);
+		}
+
 		// wir testen das Treeset mit String
-				Comparator<Car> asc = new Comparator<Car>(){
-		            @Override
-		            public int compare(Car c1, Car c2) {
-		                 return Double.compare(c1.hashCode(), c2.hashCode());
-		            }
-		        };
-		        Comparator<Car> desc = new Comparator<Car>(){
-		            @Override
-		            public int compare(Car c1, Car c2) {
-		                 return Double.compare(c2.hashCode(),c1.hashCode());
-		            }
-		        };
-				
-				TreeSet<Car> treeCar = new TreeSet<>(desc);
-				treeCar.add(new Car(true, 1000));
-				treeCar.add(new Car(true, 500));
-				treeCar.add(new Car(true, 2000));
-				
-				
-				for (Car i : treeCar) {
-					System.out.println(i);
-				}
- 	}
+		Comparator<Car> asc = new Comparator<Car>() {
+			@Override
+			public int compare(Car c1, Car c2) {
+				return Double.compare(c1.hashCode(), c2.hashCode());
+			}
+		};
+		Comparator<Car> desc = new Comparator<Car>() {
+			@Override
+			public int compare(Car c1, Car c2) {
+				return Double.compare(c2.hashCode(), c1.hashCode());
+			}
+		};
+
+		TreeSet<Car> treeCar = new TreeSet<>(desc);
+		treeCar.add(new Car(true, 1000));
+		treeCar.add(new Car(true, 500));
+		treeCar.add(new Car(true, 2000));
+
+		for (Car i : treeCar) {
+			System.out.println(i);
+		}
+	}
 }
