@@ -14,19 +14,25 @@ public class KlasseA {
 	 */
 	public void setLink(KlasseB objB){
 		
-		if(b == null) {
-			this.b = objB;
+		if(objB.getLink() != this) {
+			this.b = objB;	
 			objB.setLink(this);
-			
 		}
-		
-		
-		//Variante Herr Bauer
-		/*this.b = objB;
-		
-		if(objB.getLink() != this){
-			objB.setLink(this);
-		}*/
-		
+	}
+	
+	public KlasseB getLink() {
+		// TODO Auto-generated method stub
+		return this.b;
+	}
+	
+	public void removeLink(KlasseB objB) {
+		if(this.b != objB){
+			return;
+		}
+		KlasseB tmp = this.b;
+		this.b = null;
+		if(this == tmp.getLink()){
+			tmp.removeLink(this);
+		}
 	}
 }
