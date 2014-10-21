@@ -9,5 +9,10 @@ public class MainApp {
 			System.out.println(marco.getLink());
 			marco.removeLink();
 			System.out.println(marco.getLink());
+			
+			Wohnung marco1 = new Wohnung();
+			System.out.println(marco1.getLink());
+			marco1.setLink(platz1);
+			System.out.println(marco1.getLink());
 	}
 }

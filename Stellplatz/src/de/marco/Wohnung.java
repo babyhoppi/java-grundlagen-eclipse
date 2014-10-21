@@ -13,7 +13,7 @@ private Stellplatz stellplatz;
 	}
 
 	public void setLink(Stellplatz stellplatz){
-		stellplatz = new Stellplatz();
+		this.stellplatz = stellplatz;
 	}
 	
 	public void removeLink(){
