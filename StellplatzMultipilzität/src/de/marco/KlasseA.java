@@ -14,8 +14,13 @@ public class KlasseA {
 	 */
 	public void setLink(KlasseB objB){
 		
-		if(objB.getLink() != this) {
-			this.b = objB;	
+		if(this.b != null && this.b !=objB){
+			this.b.removeLink(this);
+		}
+		
+		//prüfen, dass wir nicht wechselseitig, endlos setLink aufrufen
+		this.b = objB;
+		if(objB.getLink() != this) {		
 			objB.setLink(this);
 		}
 	}

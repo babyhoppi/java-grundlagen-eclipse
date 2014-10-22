@@ -14,6 +14,14 @@ public class MainApp {
 		
 		System.out.println(a.toString());
 		System.out.println(b.toString());
+		
+		// ---------bidirektionale 
+		KlasseD d = new KlasseD();
+		KlasseC c = new KlasseC();
+		KlasseC c1 = new KlasseC();
+		d.setLink(c);
+		d.setLink(c1);
+		System.out.println(c.toString());
 	}
 	
 }

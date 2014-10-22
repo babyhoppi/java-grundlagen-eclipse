@@ -1,9 +1,9 @@
 package de.marco;
 
-public class KlasseB {
+public class KlasseD {
 
 	// Referenz auf ein Objekt der KlasseA
-	private KlasseA a = null;
+	private KlasseC c = null;
 	/**
 	 * stellt die Beziehung zum Objekt der KlasseA her und 
 	 * fordert das Objekt der KlasseA auf, eine Beziehung
@@ -14,30 +14,32 @@ public class KlasseB {
 	/**
 	 * @param objA
 	 */
-	public void setLink(KlasseA objA){
+	public void setLink(KlasseC objC){
 		
-		if(this.a != null && this.a !=objA){
-			this.a.removeLink(this);
-		}
+		for(int i=0; i<4;i++){
+			if(this.c != null && this.c !=objC){
+				this.c.removeLink(this);
+			}
 		
 		//prüfen, dass wir nicht wechselseitig, endlos setLink aufrufen
-		this.a = objA;
-		if(objA.getLink() != this) {	
-			objA.setLink(this);
+			this.c = objC;
+			if(objC.getLink() != this) {	
+				objC.setLink(this);
+			}
 		}
 	}
 	
-	public KlasseA getLink() {
+	public KlasseC getLink() {
 		// TODO Auto-generated method stub
-		return this.a;
+		return this.c;
 	}
 	
-	public void removeLink(KlasseA objA) {
-		if(this.a != objA){
+	public void removeLink(KlasseC objC) {
+		if(this.c != objC){
 			return;
 		}
-		KlasseA tmp = this.a;
-		this.a = null;
+		KlasseC tmp = this.c;
+		this.c = null;
 		if(this == tmp.getLink()){
 			tmp.removeLink(this);
 		}
