@@ -19,9 +19,27 @@ public class MainApp {
 		KlasseD d = new KlasseD();
 		KlasseC c = new KlasseC();
 		KlasseC c1 = new KlasseC();
-		d.setLink(c);
-		d.setLink(c1);
+		c.setLink(new KlasseD());
+		c.setLink(new KlasseD());
+		c.setLink(new KlasseD());
+		//d.setLink(c1);
+		//c1.removeLink(d);
+		System.out.println(d.toString());
 		System.out.println(c.toString());
+		System.out.println(c1.toString());
+		
+		//LÖSUNG HERR BAUER
+		KlasseE e = new KlasseE();
+		e.setLink(new KlasseF()); //0
+		e.setLink(new KlasseF()); //1
+		e.setLink(new KlasseF()); //2
+		e.setLink(new KlasseF()); //3
+		e.setLink(new KlasseF()); // dürfte schon nicht mehr gehen
+		
+		for (KlasseF objF : e.getAllLink()) {
+			System.out.println(objF);
+		}
+		
 	}
 	
 }

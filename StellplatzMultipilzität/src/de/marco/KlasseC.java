@@ -1,9 +1,11 @@
 package de.marco;
 
+import java.util.Arrays;
+
 public class KlasseC {
 
 	// Referenz auf ein Objekt der KlasseD
-	private KlasseD [] raeder = new KlasseD[] {null,null,null,null};
+	private KlasseD [] raeder = new KlasseD[4];
 	
 	
 	
@@ -41,7 +43,7 @@ public class KlasseC {
 	public void removeLink(KlasseD objD) {
 		for(int i=0; i<4;i++){
 			if(this.raeder[i] != objD){
-				return;
+				break;
 			}
 			KlasseD tmp = this.raeder[i];
 			this.raeder[i] = null;
@@ -50,4 +52,11 @@ public class KlasseC {
 			}
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "KlasseC [raeder=" + Arrays.toString(raeder) + "]";
+	}
+	
+	
 }
