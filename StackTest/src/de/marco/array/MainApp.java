@@ -7,6 +7,7 @@ import java.util.List;
 public class MainApp {
 	public static List<String> test = new ArrayList<String>();
 	public static final String KONSTANTE_STRING_1 = "Ausgabe der aktuellen Liste ";
+	public static final int KONSTANTE_INT_1EINTRAG = test.indexOf(test)+1;
 
 	public static void main(String[] args) {
 
@@ -22,9 +23,9 @@ public class MainApp {
 		System.out.println("_________________NEUER ANFANG_________________");
 		System.out.println(KONSTANTE_STRING_1 + "mit alten Eintrag am Angfang: "+test);
 		System.out.println("Der Eintrag: "+test.get(0) + " soll gelöscht werden.");
-		test.remove(test.indexOf(test)+1);
+		test.remove(KONSTANTE_INT_1EINTRAG);
 		System.out.println(KONSTANTE_STRING_1 + "ohne den ersten Eintrag: "+test);
-		test.add(test.indexOf(test)+1, "NEUER ANFANG");
+		test.add(KONSTANTE_INT_1EINTRAG, "NEUER ANFANG");
 		System.out.println("Der Eintrag: "+test.get(0) + " wurde hizugefügt.");
 		System.out.println("Ausgabe der aktuellen Liste mit neuem Eintrag am Angfang: "+test);
 
@@ -58,6 +59,10 @@ public class MainApp {
 
 				}
 			}
+			// Beschreibung
+			// Diese Exception wird ausgelöst, wenn ein Thread eine Kollektion verändert,
+			// während ein anderer Thread über diese Kollektion iteriert und die Kollektion
+			// keine Manipulationen während der Iteration zuläßt.
 		} catch (ConcurrentModificationException e) {
 			System.out.println("Exception when deleting \""
 					+ zuLoeschen.toString() + "\"");

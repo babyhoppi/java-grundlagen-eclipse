@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: M46923
+  Date: 07.01.13
+  Time: 13:52
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+    <title>Gästebuch</title>
+</head>
+<body>
+<h1><h:outputText value="Gästebuch für alle"/></h1>
+<h2><h:outputText value="Hallo Gast bitte hinterlasse ein Kommentar:-)"/></h2>
+<h:form id="form">
+    <h:panelGrid id="grid" columns="2">
+        <h:outputLabel value="First Name:" for="firstName"/>
+        <h:inputText id="firstName"
+                     value="#{neuereintragBean.neuenEintrag.vorname}"/>
+        <h:outputLabel value="Last Name:" for="lastName"/>
+        <h:inputText id="lastName"
+                     value="#{neuereintragBean.neuenEintrag.nachname}"/>
+        <h:outputLabel value="E-Mail:" for="email"/>
+        <h:inputText id="email"
+                     value="#{neuereintragBean.neuenEintrag.email}"/>
+        <h:outputLabel value="Nachricht:" for="nachricht"/>
+        <h:inputTextarea id="nachricht"
+                     value="#{neuereintragBean.neuenEintrag.nachricht}"/>
+                <h:commandButton id="save" action="#{neuereintragBean.save}"
+                         value="Save"/>
+    </h:panelGrid>
+</h:form>
+</body>
+</html>

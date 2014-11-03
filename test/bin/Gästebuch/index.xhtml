@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: M46923
+  Date: 07.01.13
+  Time: 13:52
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+    <title>Gästebuch</title>
+</head>
+<body>
+<h1><h:outputText value="Gästebuch für alle"/></h1>
+<h2><h:outputText value="Hallo für ein Kommentar wäre ich euch dankbar :-)"/></h2>
+
+<h:form>
+
+    <table border="1">
+        <ui:repeat value="#{eintragslistenBean.gaestebuchEintraege}" var="item">
+        <tr>
+            <td><h:outputText value="Name: "/>
+            <h:outputText style="border: none" value="#{item.vorname} "  />
+            <h:outputText style="border: none" value="#{item.nachname}" /></td>
+        </tr>
+        <tr>
+            <td><h:outputText value="E-Mail: "/>
+            <h:outputText style="border: none" value="#{item.email}" /></td>
+        </tr>
+        <tr>
+            <td><h:outputText value="Nachricht: "/>
+            <h:outputText style="border: none" value="#{item.nachricht}" /> </td>
+        </tr>
+        </ui:repeat>
+    </table>
+
+
+</h:form>
+</body>
+</html>
