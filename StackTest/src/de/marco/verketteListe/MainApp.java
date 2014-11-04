@@ -21,10 +21,9 @@ public class MainApp {
 		list.einfuegenDanach("2", "neu");
 		list.entfernen("3");
 		list.ausgebenDerListe();
-		System.out.println("erstes Element: " + list.getErstesElement().getObj());
-		System.out.println("ist '3' enthalten? " + list.find("3"));
-		System.out.println("ist '5' enthalten? " + list.find("5"));
-		System.out.println("letztes Element: " + list.getLetztesElement().getObj());
+		System.out.println("Das erstes Element: " + list.getErstesElement().getObj());
+		System.out.println("Das letztes Element: " + list.getLetztesElement().getObj());
+		list.ausgebenDerListe();
 	}
 
 }

@@ -19,6 +19,18 @@ public class VerketteListe {
 		letztesElement.setNext(neuesElement);
 	}
 
+	public Element getErstesElement() {
+		return startElement;
+	}
+
+	public Element getLetztesElement() {
+		Element element = startElement;
+		while (element.getNext() != null) {
+			element = element.getNext();
+		}
+		return element;
+	}
+
 	public void einfuegenDanach(Object o, Object neuesObj) {
 		Element neuesElement;
 		Element nextesElement;
@@ -46,28 +58,6 @@ public class VerketteListe {
 			}
 			element = element.getNext();
 		}
-	}
-
-	public boolean find(Object o) {
-		Element element = startElement;
-		while (element != null) {
-			if (element.getObj().equals(o))
-				return true;
-			element = element.getNext();
-		}
-		return false;
-	}
-
-	public Element getErstesElement() {
-		return startElement;
-	}
-
-	public Element getLetztesElement() {
-		Element element = startElement;
-		while (element.getNext() != null) {
-			element = element.getNext();
-		}
-		return element;
 	}
 
 	public void ausgebenDerListe() {
