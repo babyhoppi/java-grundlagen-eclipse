@@ -76,6 +76,9 @@ public class Kompositum extends AbstrakteKomponente {
 	 */
 	@Override
 	public void methodeA() {
+		// Set ist wieder Iterierbar und kann mit der ForEach durchsucht werden
+		
+		//hole alle Schlüssel aus dem aktuellen Kompositums
 		Set<Integer> keySet = this.kindKnoten.keySet();
 		// wir lassen **ALLE** abstrakten Komponenten die Methode a ausführen,
 		// d.h. im Falle eines Debuggers folgt eine Ausgabe
