@@ -15,6 +15,8 @@ public class MainApp {
 		System.out.println("autoA: " + car.getColor() + ", " 
 		+ car.getMaxSpeed() + " km/h, " + car.getManufacturer()+ " ," + car.getMileage());
 		
+		System.out.println(bmw.getFarbe());
+		
 	}
 
 }
