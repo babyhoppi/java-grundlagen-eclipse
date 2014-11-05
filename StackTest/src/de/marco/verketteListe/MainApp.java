@@ -18,11 +18,12 @@ public class MainApp {
 		list.hinzufuegen("3");
 		list.hinzufuegen("4");
 		list.hinzufuegen("5");
-		list.einfuegenDanach("2", "neu");
+		list.einfuegenDanach("3", "neu");
 		list.entfernen("3");
 		list.ausgebenDerListe();
 		System.out.println("Das erstes Element: " + list.getErstesElement().getObj());
 		System.out.println("Das letztes Element: " + list.getLetztesElement().getObj());
+		list.entfernen("4");
 		list.ausgebenDerListe();
 	}
 
