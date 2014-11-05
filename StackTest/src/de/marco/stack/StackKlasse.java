@@ -4,7 +4,6 @@
 package de.marco.stack;
 
 import java.util.EmptyStackException;
-import java.util.Stack;
 
 /**
  * @Author Marco Hoppe
@@ -17,22 +16,23 @@ public class StackKlasse {
 	public StackKlasse() {
 	}
 	
-	static void einfuegenStack(Stack<Integer> stack, int zahl) {
+	static void einfuegenStack(EigeneStackKlasse stack, int zahl) {
 		stack.push(new Integer(zahl));
 		System.out.println("push(" + zahl + ")");
 		System.out.println("stack: " + stack);
 	}
 
-	static void vomStackAbarbeiten(Stack<Integer> stack) {
+	static void vomStackAbarbeiten(EigeneStackKlasse stack) {
 		System.out.print("pop -> ");
-		Integer zahl = (Integer) stack.pop();
+		Integer zahl = stack.top();
 		System.out.println(zahl);
+		stack.pop();
 		System.out.println("stack: " + stack);
 	}
 	
-	static void alleAbarbeiten(Stack<Integer> stack, int stackobj) {
+	static void alleAbarbeiten(EigeneStackKlasse stack, int stackobj) {
 		try {
-			for (int i = 0; i <= stackobj; i++) {
+			for (int i = 1; i <= stackobj; i++) {
 				vomStackAbarbeiten(stack);
 			}
 		} catch (EmptyStackException e) {
@@ -40,7 +40,7 @@ public class StackKlasse {
 		}
 	}
 	
-	static void einfuegenStackZufall(Stack<Integer> stack, int stackobj) {
+	static void einfuegenStackZufall(EigeneStackKlasse stack, int stackobj) {
 		for (int i = 0; i <= stackobj; i++) {
 			einfuegenStack(stack, StackKlasse.myRandom(10, 100));
 		}
@@ -50,5 +50,7 @@ public class StackKlasse {
 	public static int myRandom(int klein, int hoch) {
 		return (int) (Math.random() * (hoch - klein) + klein);
 	}
+	
+	
 
 }
