@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.marco.beobachter;
+package de.marco.iterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,7 +12,7 @@ import java.util.TreeSet;
 /**
  * @Author Marco Hoppe
  */
-public class Car implements Vehicle, Observable {
+public class Car implements Vehicle {
 
 	private String manufacturer = "";
 	private String color = "";
@@ -21,12 +21,7 @@ public class Car implements Vehicle, Observable {
 
 	private int mileage = 0;
 
-	/**
-	 * Wir benötigen eine Struktur, um mögliche Observer zu verwalten.
-	 */
-	Set<Observer> stalker = new TreeSet<>(new ObserverComperator());
-	
-	/**
+		/**
 	 * Der Konstructor
 	 */
 	public Car(String m, String c, int s) {
@@ -55,9 +50,6 @@ public class Car implements Vehicle, Observable {
 	@Override
 	public void moveForward(int miles) {
 		this.mileage += miles;
-		// informiere die Beobachter
-		this.inform();
-
 	}
 
 	@Override
@@ -106,44 +98,8 @@ public class Car implements Vehicle, Observable {
 		// TODO Auto-generated method stub
 		return this.maxSpeed;
 	}
-
-	/* Die Methoden des Inteface Observable */
-
-	@Override
-	public void attach(Observer o) {
-		if (null == o) {
-			return;
-		}
-		// füge den Observer zur Menge der Beobachter hinzu
-		this.stalker.add(o);
+	
+	public String toString() {
+		return this.manufacturer + ","+ this.color + ","+this.maxSpeed;
 	}
-
-	@Override
-	public void detach(Observer o) {
-		if (null == o) {
-			return;
-		}
-		// löscht den Observer aus der Menge der Beobachter
-		this.stalker.remove(o);
-	}
-
-	@Override
-	public void inform() {
-		// informiere alle Beobachter, dass sich der Zustand des Objektes
-		// geändert hat
-		Iterator<Observer> itr = this.stalker.iterator();
-		List<Observer> lo = new ArrayList<>();
-		
-		// wir kopieren die Observer in eine ArrayList
-		while (itr.hasNext()){
-			lo.add((Observer) itr.next());
-		}
-		
-		//.... und aktualisieren anschließend die Observer der ArrayList
-		for(Observer o : lo) {
-			o.update(this);
-		}
-				
-	}
-
 }
